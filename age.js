@@ -50,7 +50,7 @@ function getAge(){
 			}
 		}
 		if(Year>=0&&Month>=0&&Day>=0){
-			document.getElementById("age").innerHTML=Year+" years "+Month+" months "+Day+" days";
+			document.getElementById("age").innerHTML="Your Age: "+Year+" years "+Month+" months "+Day+" days";
 		}
 		else{
             document.getElementById("age").innerHTML="You are going to born in future!!";
