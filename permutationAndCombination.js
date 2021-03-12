@@ -13,6 +13,9 @@ function getValue(){
         if(n<0||r<0){
             alert("For nPr, value of n & r must be greater than or equals to 0");
         }
+        else if(isNaN(n)||isNaN(r)){
+            alert("please enter data");
+        }
         else if(n<r){
             alert("For nPr, value of n must be greater than or equals to r");
         }
@@ -26,6 +29,9 @@ function getValue(){
         var r=parseInt(document.getElementById("r").value);
         if(n<0||r<0){
             alert("For nCr, value of n & r must be greater than or equals to 0");
+        }
+        else if(isNaN(n)||isNaN(r)){
+            alert("please enter data");
         }
         else if(n<r){
             alert("For nCr, value of n must be greater than or equals to r");
