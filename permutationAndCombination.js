@@ -18,7 +18,7 @@ function getValue(){
         }
         else{
             var permutation=factorial(n)/factorial(n-r);
-            document.getElementById("ans").innerHTML="The value of <sup>n</sup>P<sub>r</sub> is: "+permutation;
+            document.getElementById("ans").innerHTML="The value of <sup>"+n+"</sup>P<sub>"+r+"</sub> is: "+permutation;
         }
     }
     else if(select.selectedIndex==2){
@@ -32,7 +32,7 @@ function getValue(){
         }
         else{
             var combination=factorial(n)/(factorial(n-r)*factorial(r));
-            document.getElementById("ans").innerHTML="The value of <sup>n</sup>C<sub>r</sub> is: "+combination;
+            document.getElementById("ans").innerHTML="The value of <sup>"+n+"</sup>C<sub>"+r+"</sub> is: "+combination;
         }
     }
     else{
