@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary Calculator</title>
+    <link rel = "stylesheet" href = "style_binaryCalculator.css"></link>
+    <script type="text/javascript" src = "calculate.js"></script>
+</head>
+<body>
+    <button id = "btnRes">
+    </button>
+    <div class = "btnContainer">
+        <button id = "btn0" class = "btns" onclick = "printValue('0')">0</button>
+        <button id = "btn1" class = "btns" onclick = "printValue('1')">1</button>
+        <button id = "btnClr" class = "btns" onclick = "removeData()">C</button>
+        <button id = "btnEql" class = "btns" onclick = "calculate()">=</button>
+        <button id = "btnSum" class = "btns" onclick = "printValue('+')">+</button>
+        <button id = "btnSub" class = "btns" onclick = "printValue('-')">-</button>
+        <button id = "btnMul" class = "btns" onclick = "printValue('*')">*</button>
+        <button id = "btnDiv" class = "btns" onclick = "printValue('/')">/</button>
+    </div>
+</body>
+</html>
