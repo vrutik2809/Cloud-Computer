@@ -37,8 +37,8 @@ function decimalToBinary(val){
 
 //function for finding nPr & nCr
 function getValue(){
-    var select=document.getElementById("math");
-    if(select.selectedIndex==1){
+    var select = document.getElementById("math").value;
+    if(select == "Permutation"){
         var n=parseInt(document.getElementById("n").value);
         var r=parseInt(document.getElementById("r").value);
         if(n<0||r<0){
@@ -55,7 +55,7 @@ function getValue(){
             document.getElementById("ans").innerHTML="The value of <sup>"+n+"</sup>P<sub>"+r+"</sub> is: "+permutation;
         }
     }
-    else if(select.selectedIndex==2){
+    else{
         var n=parseInt(document.getElementById("n").value);
         var r=parseInt(document.getElementById("r").value);
         if(n<0||r<0){
@@ -71,9 +71,6 @@ function getValue(){
             var combination=factorial(n)/(factorial(n-r)*factorial(r));
             document.getElementById("ans").innerHTML="The value of <sup>"+n+"</sup>C<sub>"+r+"</sub> is: "+combination;
         }
-    }
-    else{
-        alert("Please select function");
     }
 }
 //function for age calculation
@@ -138,147 +135,93 @@ function getAge(){
 }
 //function for printing data according to selection
 function printData(){
-    let select = document.getElementById("math");
-    if(select.selectedIndex == 2){
-        let line1 = document.createElement("h2");
-        line1.innerHTML = "Value of x: ";
-        line1.setAttribute("id","l1");
-        let input1 = document.createElement("input");
-        input1.setAttribute("type","number");
-        input1.setAttribute("id","x");
-        line1.append(input1);
-        document.body.append(line1);
-        let line2 = document.createElement("h2");
-        line2.innerHTML = "Value of y: ";
-        line2.setAttribute("id","l2");
-        let input2 = document.createElement("input");
-        input2.setAttribute("type","number");
-        input2.setAttribute("id","y");
-        line2.append(input2);
-        document.body.append(line2);
-        let radio1 = document.createElement("input");
-        radio1.innerHTML = "deg";
-        radio1.setAttribute("type","radio");
-        radio1.setAttribute("name","phase");
-        radio1.setAttribute("id","r1");
-        radio1.setAttribute("value","deg");
-        let radio2=document.createElement("input");
-        radio2.innerHTML = "rad";
-        radio2.setAttribute("type","radio");
-        radio2.setAttribute("name","phase");
-        radio2.setAttribute("id","r2");
-        radio2.setAttribute("value","rad");
-        let line3 = document.createElement("h2");
-        line3.innerHTML = "Phase in : ";
-        line3.setAttribute("id","l3");
-        line3.append(radio1);
-        line3.append("deg ");
-        line3.append(radio2);
-        line3.append("rad ");
-        document.body.append(line3);
-        let btn=document.createElement("button");
-        btn.innerHTML = "Convert";
-        btn.setAttribute("id","btn");
-        btn.setAttribute("onclick","convert()");
-        document.body.append(btn);
+    let select = document.getElementById("math").value;
+    if(select == "RectangularToPolar"){
+        document.getElementById("ans").innerHTML = "";
+        document.getElementById("demo").innerHTML = `
+        <h2 id="l1">Value of x: <input type="number" id="x" /></h2>
+        <h2 id="l2">Value of y: <input type="number" id="y" /></h2>
+        <h2 id="l3">
+          Phase in : <input type="radio" name="phase" id="r1" value="deg" /> deg <input type="radio" name="phase" id="r2" value="rad" /> rad
+        </h2>
+        <button onclick = "convert()">Convert</button>`;
     }
-    else if(select.selectedIndex == 1){
-        let line1 = document.createElement("h2");
-        line1.innerHTML = "Value of mod: ";
-        line1.setAttribute("id","l1");
-        let input1 = document.createElement("input");
-        input1.setAttribute("type","number");
-        input1.setAttribute("id","mod");
-        line1.append(input1);
-        document.body.append(line1);
-        let radio1 = document.createElement("input");
-        radio1.innerHTML = "deg";
-        radio1.setAttribute("type","radio");
-        radio1.setAttribute("name","phase");
-        radio1.setAttribute("id","r1");
-        radio1.setAttribute("value","deg");
-        let radio2=document.createElement("input");
-        radio2.innerHTML = "rad";
-        radio2.setAttribute("type","radio");
-        radio2.setAttribute("name","phase");
-        radio2.setAttribute("id","r2");
-        radio2.setAttribute("value","rad");
-        let line2 = document.createElement("h2");
-        line2.innerHTML = "Phase in : ";
-        line2.setAttribute("id","l2");
-        line2.append(radio1);
-        line2.append("deg ");
-        line2.append(radio2);
-        line2.append("rad ");
-        document.body.append(line2);
-        let line3 = document.createElement("h2");
-        line3.innerHTML = "Value of phase: ";
-        line3.setAttribute("id","l3");
-        let input2 = document.createElement("input");
-        input2.setAttribute("type","number");
-        input2.setAttribute("id","phase");
-        line3.append(input2);
-        document.body.append(line3);
-        let btn=document.createElement("button");
-        btn.setAttribute("id","btn");
-        btn.innerHTML = "Convert";
-        btn.setAttribute("onclick","convert()");
-        document.body.append(btn);
+    else{
+        document.getElementById("ans").innerHTML = "";
+        document.getElementById("demo").innerHTML = `
+        <h2 id="l1">Value of mod: <input type="number" id="mod" /></h2>
+        <h2 id="l2">
+          Phase in : <input type="radio" name="phase" id="r1" value="deg" /> deg <input type="radio" name="phase" id="r2" value="rad" /> rad
+        </h2>
+        <h2 id="l3">Value of phase: <input type="number" id="phase" /></h2>
+        <button onclick = "convert()">Convert</button>`;
     }
 }
 //function for converting coordinate according to choice
 function convert(){
-    let select = document.getElementById("math");
-    let line4 = document.createElement("h2");
-    line4.setAttribute("id","ans");
-    document.body.append(line4);
-    if(select.selectedIndex == 2){
+    let select = document.getElementById("math").value;
+    if(select == "RectangularToPolar"){
         let x = parseFloat(document.getElementById("x").value);
         let y = parseFloat(document.getElementById("y").value);
         let mod = round(Math.sqrt((x * x) + (y * y)),2);
-        if(document.getElementById("r1").checked){
-            let phase = round(Math.atan(Math.abs(y/x)) * (180 / Math.PI),2);
-            if(x > 0 && y > 0){
-                document.getElementById("ans").innerHTML = "Polar form: "+mod+"∠("+phase+"<sup>∘</sup>)";
-            }
-            else if(x < 0 && y > 0){
-                document.getElementById("ans").innerHTML = "Polar form: "+mod+"∠("+(180-phase)+"<sup>∘</sup>)";
-            }
-            else if(x < 0 && y < 0){
-                document.getElementById("ans").innerHTML = "Polar form: "+mod+"∠("+(-(180-phase))+"<sup>∘</sup>)";
-            }
-            else{
-                document.getElementById("ans").innerHTML = "Polar form: "+mod+"∠("+(-phase)+"<sup>∘</sup>)";
-            }
+        if(isNaN(x) || isNaN(y)){
+            alert("Enter data");
+        }
+        else if(!document.getElementById("r1").checked && !document.getElementById("r2").checked){
+            alert("Select Phase");
         }
         else{
-            let phase = round(Math.atan(Math.abs(y/x)),2);
-            if(x > 0 && y > 0){
-                document.getElementById("ans").innerHTML = "Polar form: "+mod+"∠("+phase+")";
-            }
-            else if(x < 0 && y > 0){
-                document.getElementById("ans").innerHTML = "Polar form: "+mod+"∠("+round((Math.PI-phase),2)+")";
-            }
-            else if(x < 0 && y < 0){
-                document.getElementById("ans").innerHTML = "Polar form: "+mod+"∠("+(-round((Math.PI-phase),2))+")";
+            if(document.getElementById("r1").checked){
+                let phase = round(Math.atan(Math.abs(y/x)) * (180 / Math.PI),2);
+                if(x > 0 && y > 0){
+                    document.getElementById("ans").innerHTML = "Polar form: "+mod+"∠("+phase+"<sup>∘</sup>)";
+                }
+                else if(x < 0 && y > 0){
+                    document.getElementById("ans").innerHTML = "Polar form: "+mod+"∠("+(180-phase)+"<sup>∘</sup>)";
+                }
+                else if(x < 0 && y < 0){
+                    document.getElementById("ans").innerHTML = "Polar form: "+mod+"∠("+(-(180-phase))+"<sup>∘</sup>)";
+                }
+                else{
+                    document.getElementById("ans").innerHTML = "Polar form: "+mod+"∠("+(-phase)+"<sup>∘</sup>)";
+                }
             }
             else{
-                document.getElementById("ans").innerHTML = "Polar form: "+mod+"∠("+(-phase)+")";
+                let phase = round(Math.atan(Math.abs(y/x)),2);
+                if(x > 0 && y > 0){
+                    document.getElementById("ans").innerHTML = "Polar form: "+mod+"∠("+phase+")";
+                }
+                else if(x < 0 && y > 0){
+                    document.getElementById("ans").innerHTML = "Polar form: "+mod+"∠("+round((Math.PI-phase),2)+")";
+                }
+                else if(x < 0 && y < 0){
+                    document.getElementById("ans").innerHTML = "Polar form: "+mod+"∠("+(-round((Math.PI-phase),2))+")";
+                }
+                else{
+                    document.getElementById("ans").innerHTML = "Polar form: "+mod+"∠("+(-phase)+")";
+                }
             }
         }
     }
-    else if(select.selectedIndex == 1){
+    else{
         let mod = parseFloat(document.getElementById("mod").value);
         let phase = parseFloat(document.getElementById("phase").value);
-        let line4 = document.createElement("h2");
-        line4.setAttribute("id","ans");
-        document.body.append(line4);
-        if(document.getElementById("r1").checked){
-            phase = phase * (Math.PI /180);
+        if(isNaN(mod) || isNaN(phase)){
+            alert("Enter Data");
         }
-        let x = round(mod * Math.cos(phase),2);
-        let y = round(mod * Math.sin(phase),2);
-        document.getElementById("ans").innerHTML = "Rectangular form: " + x + " + j(" + y +")"; 
+        else{
+            if(!document.getElementById("r1").checked && !document.getElementById("r2").checked){
+                alert("Select phase");
+            }
+            else{
+                if(document.getElementById("r1").checked){
+                    phase = phase * (Math.PI /180);
+                }
+                let x = round(mod * Math.cos(phase),2);
+                let y = round(mod * Math.sin(phase),2);
+                document.getElementById("ans").innerHTML = "Rectangular form: " + x + " + j(" + y +")";
+            }
+        }    
     }
 }
 {
