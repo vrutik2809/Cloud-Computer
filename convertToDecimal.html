@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConvertToDecimal</title>
+    <style>
+        body{
+            font-family: 'Calibri','Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+        }
+        select{
+            padding: 5px;
+            font-family: 'Calibri','Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+            font-size: large;
+        }
+        button{
+            font-family: 'Calibri','Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+            width: 80px;
+            font-size: large;
+        }
+        #num{
+            font-family: 'Calibri','Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+            font-size: large;
+        }
+        h2{
+            font-weight: 540;
+            padding: 5px;
+        }
+    </style>
+    <script type="text/javascript" src="conversion.js">
+    </script>
+</head>
+<body>
+    <h2>
+        Select radix:
+        <select id = "radix">
+            <option disabled selected value="none">--select radix--</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+        </select>
+    </h2>
+    <h2>
+        Enter number according to radix:
+        <input type = "text" name="input" id="num" onfocus="set()" onchange="validateNum()">
+        <label for="input" id = "lbl_input"></label>
+    </h2>
+    <button onclick="convert()">
+        Convert
+    </button>
+    <h2 id = "ans"></h2>
+</body>
+</html>
