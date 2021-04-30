@@ -63,7 +63,7 @@ function convert(){
         document.getElementById("ans").innerHTML = "Decimal value of given number = " + ans;
     }
     else{
-        document.getElementById("lbl_input").innerHTML = "Invalid";
+        document.getElementById("lbl_input").innerHTML = "Invalid number according to radix";
         document.getElementById("lbl_input").style.color = "red";
         document.getElementById("num").style.border = "3px solid red";
     }
