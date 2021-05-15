@@ -29,7 +29,7 @@ function setSecond(){
 function printData(){
     if(ss == 0 && mm == 0 && hr == 0){
         stop();
-        document.getElementById("alert").setAttribute("src","data//alert.mp3");
+        document.getElementById("alert").setAttribute("src","..//data//alert.mp3");
         document.getElementById("message").innerHTML = "સમય પતી ગયો બકાં!! Reset બટન દબાય ";
     }
     else{
