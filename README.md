@@ -7,4 +7,4 @@ It is a platform where different computation can be done like:
 * Convert Coordinate
     1. Polar to Rectangular
     2. Rectangular to polar
-* Binary Calculator
+- Binary Calculator
