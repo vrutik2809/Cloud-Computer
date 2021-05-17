@@ -11,4 +11,4 @@ It is a platform where different computation can be done like:
 
 ## Website Link
 
-Link is [here](https://vrutik2809.github.io/Website/)
+Link is [here](https://vrutik2809.github.io/Cloud-Computer/)
