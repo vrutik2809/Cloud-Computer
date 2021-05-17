@@ -8,6 +8,7 @@ It is a platform where different computation can be done like:
     1. Polar to Rectangular
     2. Rectangular to polar
 * Binary Calculator
+* Convert Number to Decimal
 
 ## Website Link
 
