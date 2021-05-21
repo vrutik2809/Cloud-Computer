@@ -1,0 +1,37 @@
+body{
+    font-family: 'Calibri','Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    background-color:aliceblue;
+}
+#data{
+    background-color:linen;
+    border: 3px solid blue;
+    padding: auto;
+    text-align: center;
+}
+#data > span{
+    width: 70px;
+    text-align: center;
+    font-family: 'Calibri','Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    font-weight: 500;
+    font-size: 25px;
+    border-radius: 10px;
+    margin: 10px;
+}
+#data > span > input{
+    height: 30px;
+    width: 70px;
+    text-align: center;
+    font-family: 'Calibri','Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    font-weight: 500;
+    font-size: large;
+    border-radius: 5px;
+}
+button{
+    text-align: center;
+    width: 100px;
+    height: 50px;
+    font-size: larger;
+}
+#data > h3{
+    font-size: 25px;
+}

@@ -1,64 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Age</title>
-    <style>
-        body{
-            font-family: 'Calibri','Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
-            background-color:aliceblue;
-        }
-        #data{
-            background-color:linen;
-            border: 3px solid blue;
-            padding: auto;
-            text-align: center;
-        }
-        #data > span{
-            width: 70px;
-            text-align: center;
-            font-family: 'Calibri','Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
-            font-weight: 500;
-            font-size: 25px;
-            border-radius: 10px;
-            margin: 10px;
-        }
-        #data > span > input{
-            height: 30px;
-            width: 70px;
-            text-align: center;
-            font-family: 'Calibri','Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
-            font-weight: 500;
-            font-size: large;
-            border-radius: 5px;
-        }
-        button{
-            text-align: center;
-            width: 100px;
-            height: 50px;
-            font-size: larger;
-        }
-        #data > h3{
-            font-size: 25px;
-        }
-    </style>
-    <script type="text/javascript" src="../js/calculate.js">
-    </script>
-</head>
-<body>
-    <div id = "data">
+    <link rel="stylesheet" href="../css/age.css" />
+    <script type="text/javascript" src="../js/calculate.js"></script>
+  </head>
+  <body>
+    <div id="data">
+        <div id="head">
         <h2>Enter your BirthDate:</h2>
-        <hr>
-            <span>Day: <input type="number" id="day" placeholder="dd"></span>
-            <span>Month: <input type="number" id="month" placeholder="mm"></span>
-            <span>Year: <input type="number" id="year" placeholder="yyyy"></span>
-        <hr>
-        <button onclick="getAge()">
-            Calculate
-        </button>
+        </div>
+        <hr />
+        <span>Day: <input type="number" id="day" placeholder="dd" /></span>
+        <span>Month: <input type="number" id="month" placeholder="mm" /></span>
+        <span>Year: <input type="number" id="year" placeholder="yyyy" /></span>
+        <hr />
+        <button onclick="getAge()" class="btn btn-primary">Calculate</button>
         <h3 id="age"></h3>
-    </div>  
-</body>
+    </div>
+  </body>
 </html>
