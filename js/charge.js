@@ -1,8 +1,9 @@
+let worker = new Worker("../js/charge.js");
 let ID = setInterval(() => {
     navigator.getBattery().then((battery) =>{
         document.getElementById("batterystatus").innerHTML = `Current battery level : ${battery.level * 100} %`;
         console.log(battery.level);
-        console.log("HII");
+        console.log("Hello");
         if(battery.charging && battery.level >= 0.60){
             document.getElementById("alert").setAttribute("src","../data/alert.mp3");
             document.getElementById("message").innerHTML = "Charging કાઢો બકાં !😒";
