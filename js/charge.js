@@ -3,6 +3,7 @@ let ID = setInterval(() => {
         document.getElementById("batterystatus").innerHTML = `Current battery level : ${battery.level * 100} %`;
         console.log(battery.level);
         console.log("Hello");
+        document.getElementById("virtual").click();
         if(battery.charging && battery.level >= 0.60){
             document.getElementById("alert").setAttribute("src","../data/alert.mp3");
             document.getElementById("message").innerHTML = "Charging કાઢો બકાં !😒";
